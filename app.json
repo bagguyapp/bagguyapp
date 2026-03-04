@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Bag Guy",
+    "slug": "bagguyapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a2e"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.bagguy.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Bag Guy uses your camera to scan barcodes and find instant savings.",
+        "NSMicrophoneUsageDescription": "Bag Guy uses your microphone for voice commands while shopping.",
+        "NSLocationWhenInUseUsageDescription": "Bag Guy uses your location to show nearby stores and deals."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1a1a2e"
+      },
+      "package": "com.bagguy.app",
+      "permissions": ["CAMERA", "RECORD_AUDIO", "ACCESS_FINE_LOCATION", "BLUETOOTH"]
+    },
+    "plugins": [
+      "expo-camera",
+      "expo-barcode-scanner"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "41e0cd64-0d42-4f1d-8c64-167b883ec509"
+      }
+    },
+    "owner": "bagguyapp"
+  }
+}
