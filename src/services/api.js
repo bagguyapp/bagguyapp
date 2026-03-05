@@ -2,7 +2,7 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Change this to your Railway/production URL when deployed
-export const API_URL = 'http://localhost:3001';
+export const API_URL = 'https://bagguy-backend-production-b6b7.up.railway.app';
 
 const api = axios.create({ baseURL: API_URL, timeout: 10000 });
 
