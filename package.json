@@ -17,7 +17,6 @@
     "axios": "^1.13.6",
     "expo": "~55.0.4",
     "expo-av": "^16.0.8",
-    "expo-barcode-scanner": "^13.0.1",
     "expo-camera": "^55.0.9",
     "expo-image-picker": "^55.0.10",
     "expo-location": "^55.1.2",

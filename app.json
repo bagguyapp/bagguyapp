@@ -26,11 +26,15 @@
         "backgroundColor": "#1a1a2e"
       },
       "package": "com.bagguy.app",
-      "permissions": ["CAMERA", "RECORD_AUDIO", "ACCESS_FINE_LOCATION", "BLUETOOTH"]
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_FINE_LOCATION",
+        "BLUETOOTH"
+      ]
     },
     "plugins": [
-      "expo-camera",
-      "expo-barcode-scanner"
+      "expo-camera"
     ],
     "extra": {
       "eas": {
