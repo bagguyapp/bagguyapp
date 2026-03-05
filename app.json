@@ -34,7 +34,14 @@
       ]
     },
     "plugins": [
-      "expo-camera"
+      "expo-camera",
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.bagguy.app",
+          "enableGooglePay": true
+        }
+      ]
     ],
     "extra": {
       "eas": {
