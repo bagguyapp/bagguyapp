@@ -17,7 +17,8 @@
       "infoPlist": {
         "NSCameraUsageDescription": "Bag Guy uses your camera to scan barcodes and find instant savings.",
         "NSMicrophoneUsageDescription": "Bag Guy uses your microphone for voice commands while shopping.",
-        "NSLocationWhenInUseUsageDescription": "Bag Guy uses your location to show nearby stores and deals."
+        "NSLocationWhenInUseUsageDescription": "Bag Guy uses your location to show nearby stores and deals.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
