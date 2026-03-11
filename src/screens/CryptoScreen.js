@@ -13,11 +13,11 @@ const COLORS = {
   sol: '#9945FF',
 };
 
-const BGT_SOLANA_MINT  = 'GVKkMqN1Eujzurv4MuTVhsNgrD9az2xGcvDZA6TxV4sE';
+const BGT_SOLANA_MINT  = '32Xuo5fPEB1Qcs3QYn7k1kcHMjU3RYNFcDK1YZgFNJoU';
 const BGT_POLYGON_ADDR = '0x9f5009bc4268D1BD7315d3eF74058fbDeb88E56F';
 const NFT_POLYGON_ADDR = '0x897d020fd39AFaB13dadA3a9524Fc6231DBaA8B4';
 const JUPITER_SWAP_URL = `https://jup.ag/swap/SOL-${BGT_SOLANA_MINT}`;
-const RAYDIUM_POOL_URL = 'https://raydium.io/liquidity/increase/?mode=add&pool_id=4rSoBURDhp5acfEjPm7FvzH2t5DmSgBs6y5AY8x7mkmJ';
+const RAYDIUM_POOL_URL = 'https://raydium.io/liquidity/increase/?mode=add&pool_id=7yX6uP3vgFcFFn9onayhirn7Qvhb3Js8LiEHogjDnYnY';
 const SOLSCAN_URL      = `https://solscan.io/token/${BGT_SOLANA_MINT}`;
 
 function AnimatedNumber({ value, decimals = 4, style }) {
