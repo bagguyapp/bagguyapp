@@ -112,7 +112,7 @@ export default function WalletScreen({ navigation }) {
 
       {/* Go Crypto button — shown to all but subtle */}
       {!user?.cryptoEnabled && (
-        <TouchableOpacity style={styles.cryptoBtn} onPress={() => navigation.navigate('Account')}>
+        <TouchableOpacity style={styles.cryptoBtn} onPress={() => navigation.navigate('Crypto')}>
           <Text style={styles.cryptoBtnText}>🔗 Go Crypto — Connect Wallet</Text>
           <Text style={styles.cryptoBtnSub}>Unlock BGT token rewards & NFT tier</Text>
         </TouchableOpacity>

@@ -12,6 +12,7 @@ import WalletScreen from '../screens/WalletScreen';
 import AccountScreen from '../screens/AccountScreen';
 import SubscriptionScreen from '../screens/SubscriptionScreen';
 import GroceryListScreen from '../screens/GroceryListScreen';
+import CryptoScreen from '../screens/CryptoScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -19,7 +20,7 @@ const Stack = createStackNavigator();
 const COLORS = { primary: '#FFD700', dark: '#1a1a2e', card: '#16213e', text: '#fff', sub: '#555' };
 
 const tabIcon = (name, focused) => {
-  const icons = { Home: '🏠', Scan: '📷', List: '🛒', Wallet: '💰', Account: '👤', Subscription: '👑' };
+  const icons = { Home: '🏠', Scan: '📷', List: '🛒', Wallet: '💰', Crypto: '🔗', Account: '👤', Subscription: '👑' };
   return <Text style={{ fontSize: 22, opacity: focused ? 1 : 0.5 }}>{icons[name]}</Text>;
 };
 
@@ -38,6 +39,7 @@ function MainTabs() {
       <Tab.Screen name="Scan" component={ScanScreen} />
       <Tab.Screen name="List" component={GroceryListScreen} options={{ title: 'List' }} />
       <Tab.Screen name="Wallet" component={WalletScreen} />
+      <Tab.Screen name="Crypto" component={CryptoScreen} options={{ title: 'Crypto' }} />
       <Tab.Screen name="Subscription" component={SubscriptionScreen} />
       <Tab.Screen name="Account" component={AccountScreen} />
     </Tab.Navigator>

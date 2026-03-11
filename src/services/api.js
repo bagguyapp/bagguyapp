@@ -41,6 +41,13 @@ export const conciergeAPI = {
   budgetTip:   ()          => api.post('/api/concierge/budget-tip'),
 };
 
+export const blockchainAPI = {
+  portfolio:     ()              => api.get('/api/blockchain/portfolio'),
+  connectWallet: (walletAddress) => api.post('/api/blockchain/connect-wallet', { walletAddress }),
+  claimBGT:      ()              => api.post('/api/blockchain/claim-bgt'),
+  leaderboard:   ()              => api.get('/api/blockchain/leaderboard'),
+};
+
 export const notificationsAPI = {
   register:   (token)      => api.post('/api/notifications/register', { token }),
   unregister: (token)      => api.delete('/api/notifications/unregister', { data: { token } }),
