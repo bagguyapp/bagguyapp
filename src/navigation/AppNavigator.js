@@ -13,16 +13,54 @@ import AccountScreen from '../screens/AccountScreen';
 import SubscriptionScreen from '../screens/SubscriptionScreen';
 import GroceryListScreen from '../screens/GroceryListScreen';
 import CryptoScreen from '../screens/CryptoScreen';
+import CouponsScreen from '../screens/CouponsScreen';
+import PurchaseHistoryScreen from '../screens/PurchaseHistoryScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+const HomeStack = createStackNavigator();
+const WalletStack = createStackNavigator();
+const AccountStack = createStackNavigator();
 
 const COLORS = { primary: '#FFD700', dark: '#1a1a2e', card: '#16213e', text: '#fff', sub: '#555' };
 
 const tabIcon = (name, focused) => {
-  const icons = { Home: '🏠', Scan: '📷', List: '🛒', Wallet: '💰', Crypto: '🔗', Account: '👤', Subscription: '👑' };
+  const icons = { Home: '🏠', Scan: '📷', List: '🛒', Wallet: '💰', Account: '👤' };
   return <Text style={{ fontSize: 22, opacity: focused ? 1 : 0.5 }}>{icons[name]}</Text>;
 };
+
+// Home stack: Home → Coupons
+function HomeStackNav() {
+  return (
+    <HomeStack.Navigator screenOptions={{ headerShown: false }}>
+      <HomeStack.Screen name="HomeMain" component={HomeScreen} />
+      <HomeStack.Screen name="Coupons" component={CouponsScreen} />
+    </HomeStack.Navigator>
+  );
+}
+
+// Wallet stack: Wallet → Crypto → Subscription
+function WalletStackNav() {
+  return (
+    <WalletStack.Navigator screenOptions={{ headerShown: false }}>
+      <WalletStack.Screen name="WalletMain" component={WalletScreen} />
+      <WalletStack.Screen name="Crypto" component={CryptoScreen} />
+      <WalletStack.Screen name="Subscription" component={SubscriptionScreen} />
+    </WalletStack.Navigator>
+  );
+}
+
+// Account stack: Account → PurchaseHistory → Subscription
+function AccountStackNav() {
+  return (
+    <AccountStack.Navigator screenOptions={{ headerShown: false }}>
+      <AccountStack.Screen name="AccountMain" component={AccountScreen} />
+      <AccountStack.Screen name="PurchaseHistory" component={PurchaseHistoryScreen} />
+      <AccountStack.Screen name="Subscription" component={SubscriptionScreen} />
+      <AccountStack.Screen name="Crypto" component={CryptoScreen} />
+    </AccountStack.Navigator>
+  );
+}
 
 function MainTabs() {
   return (
@@ -31,17 +69,20 @@ function MainTabs() {
         tabBarIcon: ({ focused }) => tabIcon(route.name, focused),
         tabBarActiveTintColor: COLORS.primary,
         tabBarInactiveTintColor: COLORS.sub,
-        tabBarStyle: { backgroundColor: COLORS.card, borderTopColor: '#333', height: 80, paddingBottom: 12 },
+        tabBarStyle: {
+          backgroundColor: COLORS.card,
+          borderTopColor: '#333',
+          height: 80,
+          paddingBottom: 12,
+        },
         headerShown: false,
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeStackNav} />
       <Tab.Screen name="Scan" component={ScanScreen} />
-      <Tab.Screen name="List" component={GroceryListScreen} options={{ title: 'List' }} />
-      <Tab.Screen name="Wallet" component={WalletScreen} />
-      <Tab.Screen name="Crypto" component={CryptoScreen} options={{ title: 'Crypto' }} />
-      <Tab.Screen name="Subscription" component={SubscriptionScreen} />
-      <Tab.Screen name="Account" component={AccountScreen} />
+      <Tab.Screen name="List" component={GroceryListScreen} />
+      <Tab.Screen name="Wallet" component={WalletStackNav} />
+      <Tab.Screen name="Account" component={AccountStackNav} />
     </Tab.Navigator>
   );
 }

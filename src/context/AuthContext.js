@@ -43,13 +43,23 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const refreshUser = async () => {
+    try {
+      const res = await authAPI.me();
+      setUser(res.data);
+      return res.data;
+    } catch (e) {}
+  };
+
   const tierLabel = {
-    free: 'Member', silver: 'VIP Silver',
-    gold: 'VIP Gold', platinum: 'VIP Platinum Elite'
+    free: 'Member',
+    silver: 'VIP Silver',
+    gold: 'VIP Gold',
+    platinum: 'VIP Platinum Elite',
   };
 
   return (
-    <AuthContext.Provider value={{ user, setUser, login, signup, logout, loading, tierLabel }}>
+    <AuthContext.Provider value={{ user, setUser, login, signup, logout, loading, refreshUser, tierLabel }}>
       {children}
     </AuthContext.Provider>
   );
