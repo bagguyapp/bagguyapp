@@ -35,4 +35,20 @@ export const subscriptionsAPI = {
   checkout: (tier) => api.post('/api/subscriptions/checkout', { tier }),
 };
 
+export const conciergeAPI = {
+  weeklyDeals: ()          => api.post('/api/concierge/weekly-deals'),
+  smartList:   (items)     => api.post('/api/concierge/smart-list', { items }),
+  budgetTip:   ()          => api.post('/api/concierge/budget-tip'),
+};
+
+export const notificationsAPI = {
+  register:   (token)      => api.post('/api/notifications/register', { token }),
+  unregister: (token)      => api.delete('/api/notifications/unregister', { data: { token } }),
+};
+
+export const referralsAPI = {
+  myCode: ()     => api.get('/api/referrals/my-code'),
+  apply:  (code) => api.post('/api/referrals/apply', { code }),
+};
+
 export default api;
